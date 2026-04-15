@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { initializeApp } from 'firebase/app';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import './App.css';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -160,7 +161,7 @@ export default function App() {
   );
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
+    <div className="min-h-screen text-white">
       
       {/* NAV */}
       <header className="flex justify-between items-center px-8 py-5 border-b border-gray-800">
@@ -249,8 +250,6 @@ export default function App() {
 Proven ability to capture and produce high-quality visual content across a wide range of events, including weddings, pre-nuptial shoots, corporate functions, business meetings, and private celebrations.
 
 A person with a hearing and speech disability, I bring a strong sense of focus, creativity, and resilience to my work. My condition has not limited my performance; instead, it has strengthened my visual awareness, attention to detail, and commitment to excellence in every project I undertake.
-
-Seeking opportunities in a dynamic and growth-oriented environment where I can contribute my technical skills, artistic vision, and professionalism, while continuously developing and delivering impactful visual storytelling.
             </p>
           </section>
 
@@ -293,7 +292,7 @@ Seeking opportunities in a dynamic and growth-oriented environment where I can c
           {/* CONTACT */}
           <section id="contact" className="px-8 py-16 text-center">
             <h2 className="text-2xl font-bold mb-4">Contact</h2>
-            <p className="text-gray-400">Email: your@email.com</p>
+            <p className="text-gray-400">Email: yvesyrnehpaule05@gmail.com</p>
           </section>
 
           {/* FOOTER */}

@@ -1,14 +1,33 @@
 body {
   margin: 0;
-  font-family: Arial;
-  background: #0b0f1a;
-  color: white;
+  font-family: 'Inter', Arial, sans-serif;
+    color: #436bac;
+  min-height: 100vh;
+  background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') center/cover fixed;
+  background-blend-mode: darken;
+  background-size: cover;
+  animation: none;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .header {
   text-align: center;
   padding: 40px 20px;
-  background: #111827;
+  background: rgba(17,24,39,0.7);
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.15);
+  backdrop-filter: blur(8px);
 }
 
 .title {
@@ -25,20 +44,30 @@ body {
 
 .card {
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 16px;
   cursor: pointer;
-  background: #1f2937;
+  background: rgba(31,41,55,0.7);
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.12);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.08);
 }
 
 .card img,
-.card video {
+  .card video {
   width: 100%;
   display: block;
-  transition: transform 0.3s;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.18);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover img {
-  transform: scale(1.05);
+  transform: scale(1.07);
+  box-shadow: 0 6px 32px 0 rgba(36,99,235,0.25);
+}
+.card:hover video {
+  transform: scale(1.07);
+  box-shadow: 0 6px 32px 0 rgba(36,99,235,0.25);
 }
 
 /* LIGHTBOX */
@@ -48,10 +77,28 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.9);
-  display: none;
-  justify-content: center;
+  background: rgba(0,0,0,0.85);
+  display: flex;
   align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+/* Glassmorphism overlay for main content */
+.glass {
+  background: rgba(17,24,39,0.65);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 32px;
+}
+
+/* Enhance text contrast */
+/* Stronger text glow for readability */
+.text-glow, h1, h2, h3, h4, h5, h6, p, .text, .text-strong {
+  color: #fff !important;
+  text-shadow: 0 2px 16px #000c, 0 1px 2px #000a;
 }
 
 .lightbox img {
