@@ -22,7 +22,8 @@ export default function App() {
     { name: "Sample Image 2", url: "https://picsum.photos/400/300?random=2", type: "image/jpeg" },
     { name: "Sample Image 3", url: "https://picsum.photos/400/300?random=3", type: "image/jpeg" },
     { name: "Sample Video", url: "https://www.w3schools.com/html/mov_bbb.mp4", type: "video/mp4" },
-    null, null, null, null, null, null
+    { name: "Global Photo", url: "/sample-global-photo.jpg", type: "image/jpeg" },
+    null, null, null, null, null
   ]);
   const [selectedProject, setSelectedProject] = useState(null);
   const projects = [
@@ -30,7 +31,11 @@ export default function App() {
       title: "Wedding Photography Shoot",
       desc: "Captured emotional wedding moments with natural lighting and cinematic framing.",
       tech: "Photography + Lightroom",
-      image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=300&fit=crop"
+      image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=300&fit=crop",
+      videos: [
+        { name: "Prenup Video 1", url: "/Prenup.mp4", type: "video/mp4" },
+        { name: "Prenup Video 2", url: "/Prenup2.mp4", type: "video/mp4" }
+      ]
     },
     {
       title: "Portrait Session",
@@ -51,7 +56,7 @@ export default function App() {
       image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop"
     },
     {
-      title: "Travel Photography",
+      title: "Diamond Takeover Dubai",
       desc: "Landscape and travel storytelling from different locations.",
       tech: "Landscape Photography",
       image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop"
@@ -116,6 +121,21 @@ export default function App() {
       <h1 className="text-3xl font-bold mb-4">{project.title}</h1>
       <p className="text-gray-400 mb-6">{project.desc}</p>
       <p className="text-sm text-gray-500 mb-8">{project.tech}</p>
+
+      {/* Render project videos if present */}
+      {project.videos && project.videos.length > 0 && (
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold mb-4">Project Videos</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {project.videos.map((video, idx) => (
+              <div key={idx} className="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden">
+                <video src={video.url} controls className="w-full h-64 object-cover bg-black mb-2" />
+                <p className="text-xs text-white px-2 pb-2 truncate">{video.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
       
       <h2 className="text-2xl font-bold mb-6">Project Gallery (10 Slots)</h2>
 
