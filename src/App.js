@@ -164,7 +164,7 @@ export default function App() {
       
       {/* NAV */}
       <header className="flex justify-between items-center px-8 py-5 border-b border-gray-800">
-        <h2 className="text-xl font-bold cursor-pointer" onClick={() => setCurrentPage("home")}>YourName</h2>
+        <h2 className="text-xl font-bold cursor-pointer" onClick={() => setCurrentPage("home")}>Yves Yrneh Paule</h2>
         <nav className="space-x-6 text-gray-300">
           <button onClick={() => setCurrentPage("home")} className="hover:text-white">About</button>
           <button onClick={() => setCurrentPage("home")} className="hover:text-white">Skills</button>
